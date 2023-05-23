@@ -1,0 +1,22 @@
+package com.ejemplo.lambdas;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args) {
+        List<String> strings = Arrays.asList("Hola", "Mundo", "Java", "Lambdas");
+
+        List<String> result = filterStrings(strings);
+
+        System.out.println(result);
+    }
+
+    public static List<String> filterStrings(List<String> strings) {
+        return strings.stream()
+                .filter(s -> s.contains("o"))
+                .collect(Collectors.toList());
+    }
+}
+
